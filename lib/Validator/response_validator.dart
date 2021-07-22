@@ -3,7 +3,6 @@ import 'package:flutter_auth/Entities/status.dart';
 
 class ResponseValidator {
   static Status check(Response response) {
-    print({"response": response});
     if (response == null) {
       return new Status(status: "ERROR.SERVER", message: "EMPTY.SERVER");
     }

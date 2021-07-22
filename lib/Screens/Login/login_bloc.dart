@@ -9,8 +9,8 @@ import 'package:flutter_auth/Entities/status.dart';
 import 'package:flutter_auth/Entities/user.dart';
 import 'package:flutter_auth/Services/Entity/signature_service.dart';
 import 'package:flutter_auth/Services/Entity/time_service.dart';
+import 'package:flutter_auth/Services/Storage/user_storage_service.dart';
 import 'package:flutter_auth/Services/Utility/certificate_service.dart';
-import 'package:flutter_auth/Storage/user_storage_service.dart';
 import 'package:flutter_auth/Validator/login_validator.dart';
 import 'package:flutter_auth/Validator/response_validator.dart';
 import 'package:meta/meta.dart';
@@ -61,7 +61,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           Status validateServer2 = ResponseValidator.check(responsePing);
           print({'pingData': validateServer2.status});
           if (validateServer2.status == "OK") {
-            print({"ping": responsePing});
             var dataPing = responsePing.data['data'];
             UserStorageService.removeUser();
             User user = LoginData.getUser(dataPing);
@@ -70,7 +69,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             user.privateKey = privateKey;
             user.encryptedPrivateKey = encryptedPrivateKey;
             UserStorageService.setUser(user);
-            yield LoginExit(message: "3 2 1 ...", route: "/");
+            yield LoginExit(message: "3 2 1 ...", route: "/homepage");
           } else if (validateServer2.message ==
               "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD") {
             UserStorageService.removeUser();

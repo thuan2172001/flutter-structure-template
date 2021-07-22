@@ -19,15 +19,20 @@ class LoginScreen extends StatelessWidget {
           },
           child: BlocBuilder<LoginBloc, LoginState>(builder: (context, state) {
             if (state is LoginSuccess) {
-              if (state.status.message == "WRONG.PASSWORD" ||
-                  state.status.message == "AUTH.ERROR.USER_NOT_FOUND") {
-              } else if (state.status.message.contains("AUTH.")) {
-                state.status.message = "Tài khoản không hợp lệ";
-                // AlertComponent(context).show(state.status);
+              print(state.status?.message);
+              if (state.status.message == "WRONG.PASSWORD") {
+                state.status.message = "Wrong password";
+                AlertComponent(context).show(state.status);
+              } else if (state.status.message == "AUTH.ERROR.USER_NOT_FOUND") {
+                state.status.message = "Invalid account";
+                AlertComponent(context).show(state.status);
               }
               return bodyBloc(context, state);
             } else if (state is LoginLoading) {
-              return Text('Loading');
+              return Container(
+                alignment: Alignment.center,
+                child: Text('Loading'),
+              );
             } else {
               if (state is LoginExit) {
                 Future.delayed(
@@ -38,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                           state.publicKey,
                           state.privateKey
                         ]));
-                print('LoginExit 36');
+                print('Login successfully !!! 36');
               }
               return Container();
             }
@@ -58,34 +63,20 @@ class LoginScreen extends StatelessWidget {
         children: <Widget>[
           Align(
             alignment: Alignment.center,
-            // child: Image.asset(
-            //   'assets/images/loginTop.png',
-            //   fit: BoxFit.fitWidth,
-            // ),
-
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Image.asset(
-                //   'assets/images/loginTop.jpeg',
-                // ),
-                // MediaQuery.of(context).size.height > 800
-                //     ? SizedBox(
-                //         height: 50,
-                //       )
-                //     : Container(),
                 Container(
                   child: Column(
                     children: [
                       Container(
                         margin: EdgeInsets.only(top: 20, right: 15),
                         child: Text(
-                          'Vui lòng đăng nhập để tiếp tục',
+                          'Sign in',
                           style: TextStyle(
                             fontFamily: 'SVN-Gilroy',
-                            // fontWeight: FontWeight.w300,
-                            fontSize: 16,
-                            color: Color(0xFF0B9446),
+                            fontSize: 40,
+                            color: Color(0xFF37B4EE),
                           ),
                         ),
                       ),
@@ -102,10 +93,10 @@ class LoginScreen extends StatelessWidget {
                                 decoration: InputDecoration(
                                     icon: Icon(
                                       Icons.person_outline,
-                                      color: Color(0xFF37B44E),
+                                      color: Color(0xFF37B4EE),
                                       size: 28,
                                     ),
-                                    hintText: 'Tên đăng nhập',
+                                    hintText: 'Username',
                                     hintStyle: TextStyle(
                                         fontFamily: "SVN-Gilroy",
                                         fontWeight: FontWeight.w300),
@@ -163,11 +154,11 @@ class LoginScreen extends StatelessWidget {
                                             state.showPassword
                                                 ? Icons.lock_open
                                                 : Icons.lock_outline,
-                                            color: Color(0xFF37B44E),
+                                            color: Color(0xFF37B4EE),
                                             size: 28,
                                           ),
                                         ),
-                                        hintText: 'Mật khẩu',
+                                        hintText: 'Password',
                                         hintStyle: TextStyle(
                                             fontFamily: "SVN-Gilroy",
                                             fontWeight: FontWeight.w300),
@@ -200,17 +191,15 @@ class LoginScreen extends StatelessWidget {
                             horizontal: 40,
                             vertical: 35,
                           ),
-                          // color: Color(0xFF37B44E),
                           height: 45,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: Color(0xFF37B44E),
-                            // color: Colors.black,
-                            border: Border.all(color: Color(0xFF37B44E)),
+                            color: Color(0xFF37B4EE),
+                            border: Border.all(color: Color(0xFF37B4EE)),
                           ),
                           child: Center(
                             child: Text(
-                              "Đăng nhập",
+                              "Sign in",
                               style: TextStyle(
                                   fontSize: 16, color: Color(0xFFFFFFFF)),
                             ),
@@ -223,12 +212,6 @@ class LoginScreen extends StatelessWidget {
               ],
             ),
           ),
-          // Align(
-          //   alignment: Alignment.bottomCenter,
-          //   child: Image.asset(
-          //     'assets/images/loginBottom.jpeg',
-          //   ),
-          // ),
         ],
       ),
     ));

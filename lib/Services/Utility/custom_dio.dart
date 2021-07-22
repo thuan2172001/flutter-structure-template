@@ -17,7 +17,7 @@ class CustomDio {
   CustomDio._();
 
   get dio {
-    if (_dio != null ) return _dio;
+    if (_dio != null) return _dio;
     _dio = _initDio();
     return _dio;
   }
@@ -38,19 +38,15 @@ class CustomDio {
       InterceptorsWrapper(
         onRequest:
             (RequestOptions options, RequestInterceptorHandler handler) async {
-          print({"header": options.headers});
-          print({"data": options.data});
           return handler.next(options); //continue
         },
         onResponse:
             (Response response, ResponseInterceptorHandler handler) async {
-          print(response);
-          print('onResponse');
+          print({"response": response});
           return handler.next(response);
         },
         onError: (DioError error, ErrorInterceptorHandler handler) async {
-          print(error);
-          print('onError');
+          print({"error": error});
           return handler.next(error); //continue
         },
       ),

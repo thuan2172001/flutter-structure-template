@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_auth/Api/user_api.dart';
+// import 'package:flutter_auth/Entities/status.dart';
+// import 'package:flutter_auth/Entities/storage.dart';
+// import 'package:flutter_auth/Validator/response_validator.dart';
 
 class MiddleWare {
   static Future<void> push(BuildContext context, String route,
@@ -20,10 +24,9 @@ class MiddleWare {
     // Status responseAuthValidator =
     //     ResponseValidator.checkAuth(responseAuth, Storage.user.id);
     // if (responseAuthValidator.status != "OK")
-    //   ServerErrorAlert(context).show(responseAuthValidator);
+    //   print('Server Error Alert');
+    //   // ServerErrorAlert(context).show(responseAuthValidator);
     // else
-    print(route);
-    print(context);
     Navigator.of(context).pushReplacementNamed(route, arguments: arguments);
   }
 

@@ -1,5 +1,5 @@
 import 'package:flutter_auth/Services/Entity/signature_service.dart';
-import 'package:flutter_auth/Storage/user_storage_service.dart';
+import 'package:flutter_auth/Services/Storage/user_storage_service.dart';
 
 class CertificateApiService {
   static String getCertificate() {
