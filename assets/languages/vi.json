@@ -1,0 +1,27 @@
+{
+  "username": "Tên đăng nhập",
+  "email": "Email",
+  "language": "Ngôn ngữ",
+  "notification": "Thông báo",
+  "loading": "Đang tải...",
+  "waiting-server": "Đang lấy dữ liệu trên server",
+  "server-error": "Lỗi trên server!",
+  "ERROR": "Lỗi",
+  "logout": "Đăng xuất",
+  "select": "Chọn",
+  "add": "Thêm",
+  "cancel": "Hủy",
+  "remove": "Xóa",
+  "finish": "Hoàn thành",
+  "done": "Xong",
+  "back": "Quay lại",
+  "clear": "Xóa hết",
+  "save": "Luu",
+
+  "WRONG.USERNAME": "Username not found",
+  "AUTH.ERROR.MISMATCH_PUBLIC_KEY": "Expired session",
+  "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD": "You need to change password",
+  "AUTH.ERROR.INVALID_REQUEST": "Not enough information",
+  "WRONG.PASSWORD": "Wrong password",
+  "ERROR.SERVER": "Something went wrong ..."
+}

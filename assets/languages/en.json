@@ -1,0 +1,27 @@
+{
+  "username": "Username",
+  "email": "Email",
+  "language": "Language",
+  "notification": "Notification",
+  "loading": "Loading...",
+  "waiting-server": "Fetching data from server ...",
+  "server-error": "Something went wrong",
+  "ERROR": "Error",
+  "logout": "Log out",
+  "select": "Select",
+  "add": "Add",
+  "cancel": "Cancel",
+  "remove": "Delete",
+  "finish": "Finish",
+  "done": "Done",
+  "back": "Back",
+  "clear": "Clear",
+  "save": "Save",
+
+  "WRONG.USERNAME": "Sai tên đăng nhập",
+  "AUTH.ERROR.MISMATCH_PUBLIC_KEY": "Hết hạn đăng nhập",
+  "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD": "Cần đổi mật khẩu",
+  "AUTH.ERROR.INVALID_REQUEST": "Chưa nhập đủ thông tin",
+  "WRONG.PASSWORD": "Sai mật khẩu",
+  "ERROR.SERVER": "Something went wrong"
+}
