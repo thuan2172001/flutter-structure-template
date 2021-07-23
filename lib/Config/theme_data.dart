@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Services/Utility/material-color-helper.dart';
-
-import 'font_family.dart';
+import 'package:flutter_auth/Config/color_config.dart';
+import 'package:flutter_auth/Config/font_config.dart';
 
 class CustomThemeData {
   CustomThemeData._();
 
   static ThemeData lightTheme = ThemeData(
-    fontFamily: CustomFontFamily.googleSans,
-    primarySwatch: MaterialColorHelper.createMaterialColor(Color(0xffffcdd2)),
+    fontFamily: FontConfig.mainFont,
+    primarySwatch: ColorConfig.primaryColor,
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
@@ -16,15 +15,15 @@ class CustomThemeData {
   );
 
   static ThemeData darkTheme = ThemeData.dark().copyWith(
-    accentColor: Color(0xffffcdd2),
+    accentColor: ColorConfig.darkColor,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(Color(0xffffcdd2)),
+        backgroundColor: MaterialStateProperty.all<Color>(ColorConfig.darkColor),
       ),
     ),
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.all<Color>(Color(0xffffcdd2)),
-      trackColor: MaterialStateProperty.all<Color>(Color(0xffffcdd2)),
+      thumbColor: MaterialStateProperty.all<Color>(ColorConfig.darkColor),
+      trackColor: MaterialStateProperty.all<Color>(ColorConfig.darkColor),
     ),
   );
 }
