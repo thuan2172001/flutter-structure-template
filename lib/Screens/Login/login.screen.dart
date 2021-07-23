@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Config/colors.dart';
 import 'package:flutter_auth/Function/middleware.dart';
 import 'package:flutter_auth/Screens/Login/login.bloc.dart';
 import 'package:flutter_auth/Components/AlertComponent/alert_component.dart';
@@ -76,7 +77,7 @@ class LoginScreen extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'SVN-Gilroy',
                             fontSize: 40,
-                            color: Color(0xFF37B4EE),
+                            color: ColorConfig.mainColor,
                           ),
                         ),
                       ),
@@ -93,7 +94,7 @@ class LoginScreen extends StatelessWidget {
                                 decoration: InputDecoration(
                                     icon: Icon(
                                       Icons.person_outline,
-                                      color: Color(0xFF37B4EE),
+                                      color: ColorConfig.mainColor,
                                       size: 28,
                                     ),
                                     hintText: 'Username',
@@ -154,7 +155,7 @@ class LoginScreen extends StatelessWidget {
                                             state.showPassword
                                                 ? Icons.lock_open
                                                 : Icons.lock_outline,
-                                            color: Color(0xFF37B4EE),
+                                            color: ColorConfig.mainColor,
                                             size: 28,
                                           ),
                                         ),
@@ -194,8 +195,8 @@ class LoginScreen extends StatelessWidget {
                           height: 45,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: Color(0xFF37B4EE),
-                            border: Border.all(color: Color(0xFF37B4EE)),
+                            color: ColorConfig.mainColor,
+                            border: Border.all(color: ColorConfig.mainColor),
                           ),
                           child: Center(
                             child: Text(

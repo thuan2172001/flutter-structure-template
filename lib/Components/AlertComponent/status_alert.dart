@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Config/colors.dart';
 import 'package:flutter_auth/Models/status.dart';
 import 'package:flutter_auth/Services/Storage/language_storage_service.dart';
 
@@ -27,7 +28,7 @@ class StatusAlert {
           child: Text(
             LanguageStorageService.text(status.message),
             style: TextStyle(
-                color: Color(0xFF37B4EE),
+                color: ColorConfig.mainColor,
                 fontSize: 15,
                 fontWeight: FontWeight.w300,
                 fontFamily: "SVN-Gilroy"),
