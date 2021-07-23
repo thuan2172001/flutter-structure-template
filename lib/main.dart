@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Config/theme_data.dart';
 import 'package:flutter_auth/Services/Storage/language_storage_service.dart';
 import 'package:flutter_auth/Services/Storage/storage_service.dart';
 import 'package:flutter_auth/routes.dart';
@@ -20,10 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Auth',
-      theme: ThemeData(
-        primaryColor: Color(0xFF37B4EE),
-        scaffoldBackgroundColor: Colors.white,
-      ),
+      theme: CustomThemeData.lightTheme,
       initialRoute: '/',
       onGenerateRoute: routeGenerater.routes,
     );
