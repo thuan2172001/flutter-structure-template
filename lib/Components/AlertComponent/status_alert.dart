@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Config/color_config.dart';
+import 'package:flutter_auth/Config/font_config.dart';
 import 'package:flutter_auth/Models/status.dart';
 import 'package:flutter_auth/Services/Storage/language_storage_service.dart';
 
@@ -11,7 +13,7 @@ class StatusAlert {
     AlertDialog alert;
     if (status.status == "SUCCESS") {
       alert = AlertDialog(
-        backgroundColor: Color(0xFFE3F2FD),
+        backgroundColor: ColorConfig.secondaryColor,
         title: Container(
           child: Text(
             LanguageStorageService.text(status.status),
@@ -19,7 +21,7 @@ class StatusAlert {
                 color: Colors.blue,
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
-                fontFamily: "SVN-Gilroy"),
+                fontFamily: FontConfig.mainFont),
             textAlign: TextAlign.center,
           ),
         ),
@@ -27,17 +29,17 @@ class StatusAlert {
           child: Text(
             LanguageStorageService.text(status.message),
             style: TextStyle(
-                color: Color(0xFF37B4EE),
+                color: Theme.of(context).primaryColor,
                 fontSize: 15,
                 fontWeight: FontWeight.w300,
-                fontFamily: "SVN-Gilroy"),
+                fontFamily: FontConfig.mainFont),
             textAlign: TextAlign.center,
           ),
         ),
       );
     } else if (status.status == "ERROR" || status.status == "ERROR.SERVER") {
       alert = AlertDialog(
-        backgroundColor: Color(0xFFE3F2FD),
+        backgroundColor: ColorConfig.secondaryColor,
         title: Container(
           child: Text(
             LanguageStorageService.text(status.status),
@@ -45,7 +47,7 @@ class StatusAlert {
                 color: Colors.red,
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
-                fontFamily: "SVN-Gilroy"),
+                fontFamily: FontConfig.mainFont),
             textAlign: TextAlign.center,
           ),
         ),
@@ -56,7 +58,7 @@ class StatusAlert {
                 color: Colors.red,
                 fontSize: 15,
                 fontWeight: FontWeight.w300,
-                fontFamily: "SVN-Gilroy"),
+                fontFamily: FontConfig.mainFont),
             textAlign: TextAlign.center,
           ),
         ),
