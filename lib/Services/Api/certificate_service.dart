@@ -38,12 +38,12 @@ String hashMessage(String message) {
 }
 
 String signMess() {
-  String priK = "2r60NylfGC6kWJCJRu29VLxwRTVKouar7pnGNzJAEa0=";
+  String privateKey = "2r60NylfGC6kWJCJRu29VLxwRTVKouar7pnGNzJAEa0=";
   String mes = "hello";
   var bytes1 = utf8.encode(mes);
   var digest1 = sha256.convert(bytes1);
   String message = digest1.toString();
-  var privateKeyHex = convertBase64ToHex(priK);
+  var privateKeyHex = convertBase64ToHex(privateKey);
   var privateKeyDecode = PrivateKey.fromHex(privateKeyHex);
   var a = privateKeyDecode.signature(message);
   var base64Sign = convertHexToBase64(a.toRawHex());
