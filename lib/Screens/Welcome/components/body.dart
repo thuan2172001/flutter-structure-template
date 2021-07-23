@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Login/login.screen.dart';
 import 'package:flutter_auth/Components/CustomButton/rounded_button.dart';
 import 'package:flutter_auth/Screens/Welcome/components/background.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
@@ -28,7 +27,8 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "LOGIN",
               press: () {
-                Modular.to.push(
+                Navigator.push(
+                  context,
                   MaterialPageRoute(
                     builder: (context) {
                       return LoginScreen();
