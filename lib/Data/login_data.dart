@@ -1,4 +1,4 @@
-import 'package:flutter_auth/Entities/user.dart';
+import 'package:flutter_auth/Models/user.dart';
 
 class LoginData {
   static User getUser(var data) {

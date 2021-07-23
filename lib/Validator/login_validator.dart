@@ -1,5 +1,5 @@
 
-import 'package:flutter_auth/Entities/status.dart';
+import 'package:flutter_auth/Models/status.dart';
 
 class LoginValidator {
   static Status checkPassword(String privateKey) {

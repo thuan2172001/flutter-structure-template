@@ -17,7 +17,6 @@
   "back": "Quay lại",
   "clear": "Xóa hết",
   "save": "Luu",
-
   "WRONG.USERNAME": "Username not found",
   "AUTH.ERROR.MISMATCH_PUBLIC_KEY": "Expired session",
   "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD": "You need to change password",

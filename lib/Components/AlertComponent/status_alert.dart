@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Entities/status.dart';
+import 'package:flutter_auth/Models/status.dart';
 import 'package:flutter_auth/Services/Storage/language_storage_service.dart';
 
 class StatusAlert {
@@ -11,7 +11,7 @@ class StatusAlert {
     AlertDialog alert;
     if (status.status == "SUCCESS") {
       alert = AlertDialog(
-        backgroundColor: Colors.white10,
+        backgroundColor: Color(0xFFE3F2FD),
         title: Container(
           child: Text(
             LanguageStorageService.text(status.status),
@@ -37,12 +37,12 @@ class StatusAlert {
       );
     } else if (status.status == "ERROR" || status.status == "ERROR.SERVER") {
       alert = AlertDialog(
-        backgroundColor: Colors.white10,
+        backgroundColor: Color(0xFFE3F2FD),
         title: Container(
           child: Text(
             LanguageStorageService.text(status.status),
             style: TextStyle(
-                color: Colors.blue,
+                color: Colors.red,
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
                 fontFamily: "SVN-Gilroy"),

@@ -1,4 +1,4 @@
-import 'package:flutter_auth/Entities/language.dart';
+import 'package:flutter_auth/Models/language.dart';
 
 class AppEntity {
   String theme = "white";

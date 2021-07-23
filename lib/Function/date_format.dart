@@ -1,6 +1,6 @@
 import 'dart:core';
 
-import 'package:flutter_auth/Entities/GMT.dart';
+import 'package:flutter_auth/Models/GMT.dart';
 import 'package:intl/intl.dart';
 
 class TimeService {
@@ -25,12 +25,6 @@ class TimeService {
 
   static Future<String> timeNoti(String dateTime) async {
     if (dateTime == null) return null;
-    DateTime temp = DateTime.parse(dateTime);
-
-    // var moment = Moment.now().locale(LocaleVi(), useInFormat: true);
-    // await initializeDateFormatting(moment.usedLocale.localeString);
-    // String time = moment.from(temp).toString().capitalize();
-
     return "time";
   }
 

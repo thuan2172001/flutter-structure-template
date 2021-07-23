@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_auth/Entities/status.dart';
+import 'package:flutter_auth/Models/status.dart';
 
 class ResponseValidator {
   static Status check(Response response) {

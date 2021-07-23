@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:flutter_auth/Services/Entity/time_service.dart';
-import 'package:flutter_auth/Services/Utility/certificate_service.dart';
+import 'package:flutter_auth/Function/date_format.dart';
+import 'package:flutter_auth/Services/Api/certificate_service.dart';
 
 class SignatureService {
   static getCertificateInfo(String username) {

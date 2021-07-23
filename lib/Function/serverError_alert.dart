@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Entities/status.dart';
+import 'package:flutter_auth/Models/status.dart';
 import 'package:flutter_auth/Services/Storage/language_storage_service.dart';
 import 'package:flutter_auth/Services/Storage/user_storage_service.dart';
 

@@ -5,18 +5,18 @@ import 'package:dio/dio.dart';
 import 'package:flutter_auth/Api/login_api.dart';
 import 'package:flutter_auth/Api/user_api.dart';
 import 'package:flutter_auth/Data/login_data.dart';
-import 'package:flutter_auth/Entities/status.dart';
-import 'package:flutter_auth/Entities/user.dart';
-import 'package:flutter_auth/Services/Entity/signature_service.dart';
-import 'package:flutter_auth/Services/Entity/time_service.dart';
+import 'package:flutter_auth/Models/status.dart';
+import 'package:flutter_auth/Models/user.dart';
+import 'package:flutter_auth/Services/Api/signature_service.dart';
+import 'package:flutter_auth/Function/date_format.dart';
 import 'package:flutter_auth/Services/Storage/user_storage_service.dart';
-import 'package:flutter_auth/Services/Utility/certificate_service.dart';
+import 'package:flutter_auth/Services/Api/certificate_service.dart';
 import 'package:flutter_auth/Validator/login_validator.dart';
 import 'package:flutter_auth/Validator/response_validator.dart';
 import 'package:meta/meta.dart';
 
-part 'login_event.dart';
-part 'login_state.dart';
+part 'login.event.dart';
+part 'login.state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(LoginInitial());

@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:flutter_auth/Entities/app.dart';
-import 'package:flutter_auth/Entities/location.dart';
-import 'package:flutter_auth/Entities/storage.dart';
-import 'package:flutter_auth/Services/Entity/time_service.dart';
+import 'package:flutter_auth/Models/app.dart';
+import 'package:flutter_auth/Models/location.dart';
+import 'package:flutter_auth/Models/storage.dart';
+import 'package:flutter_auth/Function/date_format.dart';
 import 'package:path_provider/path_provider.dart';
 
 class StorageService {

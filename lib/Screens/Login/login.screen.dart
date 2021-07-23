@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Function/middleware.dart';
-import 'package:flutter_auth/Screens/Login/login_bloc.dart';
-import 'package:flutter_auth/UI/alert_component.dart';
+import 'package:flutter_auth/Screens/Login/login.bloc.dart';
+import 'package:flutter_auth/Components/AlertComponent/alert_component.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginScreen extends StatelessWidget {

@@ -8,32 +8,6 @@ import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:secp256k1/secp256k1.dart';
 import 'package:tuple/tuple.dart';
 
-class CertificateService {
-  String signature;
-  CertificateInfo certificateInfo;
-  String publicKey;
-
-  CertificateService({this.signature, this.certificateInfo, this.publicKey});
-
-  CertificateService.fromJson(Map<String, dynamic> json) {
-    signature = json['signature'];
-    certificateInfo = json['certificateInfo'] != null
-        ? new CertificateInfo.fromJson(json['certificateInfo'])
-        : null;
-    publicKey = json['publicKey'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['signature'] = this.signature;
-    if (this.certificateInfo != null) {
-      data['certificateInfo'] = this.certificateInfo.toJson();
-    }
-    data['publicKey'] = this.publicKey;
-    return data;
-  }
-}
-
 class CertificateInfo {
   String username;
   String timestamp;

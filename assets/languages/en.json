@@ -17,7 +17,6 @@
   "back": "Back",
   "clear": "Clear",
   "save": "Save",
-
   "WRONG.USERNAME": "Sai tên đăng nhập",
   "AUTH.ERROR.MISMATCH_PUBLIC_KEY": "Hết hạn đăng nhập",
   "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD": "Cần đổi mật khẩu",

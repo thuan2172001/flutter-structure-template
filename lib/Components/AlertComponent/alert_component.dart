@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_auth/Entities/status.dart';
-import 'package:flutter_auth/Function/Alert/status_alert.dart';
+import 'package:flutter_auth/Models/status.dart';
+import 'package:flutter_auth/Components/AlertComponent/status_alert.dart';
 
 class AlertComponent {
   final BuildContext context;

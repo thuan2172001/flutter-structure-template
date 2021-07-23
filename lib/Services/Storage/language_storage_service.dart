@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_auth/Entities/language.dart';
-import 'package:flutter_auth/Entities/storage.dart';
+import 'package:flutter_auth/Models/language.dart';
+import 'package:flutter_auth/Models/storage.dart';
 
 class LanguageStorageService {
   static Future<void> initLanguage() async {
@@ -14,12 +14,12 @@ class LanguageStorageService {
     languageVi.locale = Locale("vi", "VN");
     languageVi.languageName = "Tiếng Việt";
     languageVi.data = json.decode(fileJsonVi);
-    languageVi.file = "assets/images/flags/vi.png";
+    languageVi.file = "assets/images/vi.png";
     Language languageEn = new Language();
     languageEn.subLanguage = "en";
     languageEn.locale = Locale("en", "US");
     languageEn.languageName = "English";
-    languageEn.file = "assets/images/flags/en.png";
+    languageEn.file = "assets/images/en.png";
     languageEn.data = json.decode(fileJsonEn);
     Storage.listLanguage.add(languageVi);
     Storage.listLanguage.add(languageEn);
@@ -48,9 +48,9 @@ class LanguageStorageService {
   }
 
   static String text(String str) {
-    // if (Storage.appEntity?.language?.data[str] != null)
-    //   return Storage.appEntity.language.data[str].toString();
-    // else
+    if (Storage.appEntity?.language?.data[str] != null)
+      return Storage.appEntity.language.data[str].toString();
+    else
       return str;
   }
 }
