@@ -23,7 +23,7 @@ class LanguageStorageService {
     languageEn.data = json.decode(fileJsonEn);
     Storage.listLanguage.add(languageVi);
     Storage.listLanguage.add(languageEn);
-    Storage.appEntity.language = languageVi;
+    Storage.appEntity.language = languageEn;
   }
 
   static void changeLanguage({Language language}) {

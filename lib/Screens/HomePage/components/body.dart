@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Services/Storage/language_storage_service.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class Body extends StatelessWidget {
         children: <Widget>[
           Container(
             alignment: Alignment.center,
-            child: Text('Dang nhap thanh cong roi dai vuong oi!')
+            child: Text(LanguageStorageService.text('LOGIN_SUCCESS_MSG')),
           ),
         ],
       ),

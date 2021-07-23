@@ -17,10 +17,11 @@
   "back": "Back",
   "clear": "Clear",
   "save": "Save",
-  "WRONG.USERNAME": "Sai tên đăng nhập",
-  "AUTH.ERROR.MISMATCH_PUBLIC_KEY": "Hết hạn đăng nhập",
-  "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD": "Cần đổi mật khẩu",
-  "AUTH.ERROR.INVALID_REQUEST": "Chưa nhập đủ thông tin",
-  "WRONG.PASSWORD": "Sai mật khẩu",
-  "ERROR.SERVER": "Something went wrong"
+  "WRONG.USERNAME": "Username not found",
+  "AUTH.ERROR.MISMATCH_PUBLIC_KEY": "Expired session",
+  "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD": "You need to change password",
+  "AUTH.ERROR.INVALID_REQUEST": "Not enough information",
+  "WRONG.PASSWORD": "Wrong password",
+  "ERROR.SERVER": "Something went wrong ...",
+  "LOGIN_SUCCESS_MSG": "Success roi dai vuong oi!"
 }

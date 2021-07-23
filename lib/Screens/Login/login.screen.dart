@@ -37,12 +37,12 @@ class LoginScreen extends StatelessWidget {
               if (state is LoginExit) {
                 Future.delayed(
                     Duration.zero,
-                    () async => await MiddleWare.pushAndReplace(state.route,
-                            arguments: [
-                              state.username,
-                              state.publicKey,
-                              state.privateKey,
-                            ]));
+                    () async => await MiddleWare.pushAndReplace(
+                            context, state.route, arguments: [
+                          state.username,
+                          state.publicKey,
+                          state.privateKey
+                        ]));
                 print('Login successfully !!! 36');
               }
               return Container();
