@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Auth',
-      theme: CustomThemeData.darkTheme,
+      theme: CustomThemeData.lightTheme,
       initialRoute: '/',
       onGenerateRoute: routeGenerater.routes,
     );

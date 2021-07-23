@@ -4,9 +4,7 @@ import 'package:flutter_auth/Config/font_config.dart';
 import 'package:flutter_auth/Function/middleware.dart';
 import 'package:flutter_auth/Screens/Login/login.bloc.dart';
 import 'package:flutter_auth/Components/AlertComponent/alert_component.dart';
-import 'package:flutter_auth/Services/Utility/material-color-helper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_auth/Services/Utility/material-color-helper.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen();
@@ -104,7 +102,7 @@ class LoginScreen extends StatelessWidget {
                                     hintStyle: TextStyle(
                                         fontFamily: FontConfig.mainFont,
                                         fontWeight: FontWeight.w300),
-                                    fillColor: Colors.white70,
+                                    fillColor: Theme.of(context).primaryColor,
                                     border: InputBorder.none),
                                 onChanged: (String value) {
                                   username = value;
@@ -123,7 +121,7 @@ class LoginScreen extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.9,
                         height: 1,
                         child: Container(
-                          color: ColorConfig.secondaryColor,
+                          color: ColorConfig.primaryColor,
                         ),
                       ),
                       Container(
@@ -166,7 +164,7 @@ class LoginScreen extends StatelessWidget {
                                         hintStyle: TextStyle(
                                             fontFamily: FontConfig.mainFont,
                                             fontWeight: FontWeight.w300),
-                                        fillColor: Colors.white70,
+                                        fillColor: Theme.of(context).primaryColor,
                                         border: InputBorder.none),
                                     style: TextStyle(
                                       fontSize: 16,
