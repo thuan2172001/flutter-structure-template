@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'category_button.dart';
+import '../../../Components/CustomButton/category_button.dart';
 import 'category_list.bloc.dart';
 
 class CategoryList extends StatelessWidget {
