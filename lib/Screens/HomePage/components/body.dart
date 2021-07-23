@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Api/quote_repository.dart';
 import 'package:flutter_auth/Components/home_header.dart';
+import 'package:flutter_auth/Function/handleURL.dart';
 import 'package:flutter_auth/Screens/HomePage/components/category_list.dart';
 
 class Body extends StatelessWidget {
@@ -42,11 +43,14 @@ class Body extends StatelessWidget {
                               ),
                               child: Container(
                                 padding: EdgeInsets.all(5),
-                                child: Text(
-                                  articles[index]["title"].toString(),
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                child: InkWell(
+                                  onTap: () => NewsLink.handleURL(context, articles[index]["url"]),
+                                  child: Text(
+                                    articles[index]["title"].toString(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),

@@ -8,6 +8,7 @@ class HomePageScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: HomeHeader(),
+        automaticallyImplyLeading: false,
       ),
       body: Body(),
     );
