@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_auth/Api/login_api.dart';
-import 'package:flutter_auth/Api/user_api.dart';
+import 'package:flutter_auth/Repository/login_repository.dart';
+import 'package:flutter_auth/Repository/user_repository.dart';
 import 'package:flutter_auth/Data/login_data.dart';
 import 'package:flutter_auth/Models/status.dart';
 import 'package:flutter_auth/Models/user.dart';

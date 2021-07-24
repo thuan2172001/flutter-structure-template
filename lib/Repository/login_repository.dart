@@ -8,7 +8,7 @@ class LoginApi {
       CustomDio customDio = new CustomDio();
       customDio.dio.options.headers["Authorization"] = certificate;
       response = await customDio.post(
-        "https://test.dev.nftal.io/api/auth/ping",
+        "/auth/ping",
         certificateFinal,
       );
       return response;

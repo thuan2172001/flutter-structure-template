@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_auth/Api/user_api.dart';
+import 'package:flutter_auth/Repository/email_repository.dart';
+import 'package:flutter_auth/Repository/user_repository.dart';
 import 'package:flutter_auth/Models/status.dart';
 import 'package:flutter_auth/Validator/response_validator.dart';
-import 'package:flutter_auth/Validator/signup_validator.dart';
 import 'package:meta/meta.dart';
 
 part 'signup.event.dart';
@@ -30,8 +30,13 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
     if (event is SignupSubmitEvent) {
       yield SignupLoading(message: "LOADING.SIGNUP");
       Response response = await UserAPI.signup(event.username, event.password);
+      Response emailResponse = await EmailApi.verifyMail(event.username, "verify-email");
       Status responseStatus = ResponseValidator.check(response);
-      if (responseStatus.status == "OK") {      
+      Status emailResponseStatus = ResponseValidator.check(emailResponse);
+      if (responseStatus.status == "OK") {
+        if (emailResponseStatus.status == "OK") {
+          print('Sent mail successfully!');
+        }    
         yield SignupSuccess(
           message: 'redirect to login page',
           route: "/login",
