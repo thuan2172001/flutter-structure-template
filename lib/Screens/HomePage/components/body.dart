@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Api/quote_repository.dart';
-import 'package:flutter_auth/Components/home_header.dart';
+import 'package:flutter_auth/Components/Header/home_header.dart';
 import 'package:flutter_auth/Function/handleURL.dart';
 import 'package:flutter_auth/Screens/HomePage/components/category_list.dart';
 

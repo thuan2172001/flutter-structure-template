@@ -15,5 +15,9 @@ class LoginShowPassEvent extends LoginEvent {
   final String username, password;
   final bool showPassword;
 
-  LoginShowPassEvent(this.username, this.password, this.showPassword);
+  LoginShowPassEvent(
+    this.username,
+    this.password,
+    this.showPassword,
+  );
 }

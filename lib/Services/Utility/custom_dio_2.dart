@@ -32,19 +32,16 @@ class QuoteAPIClient {
     // dio.interceptors
     _dio.interceptors.add(
       InterceptorsWrapper(
-        onRequest:
-            (RequestOptions options, RequestInterceptorHandler handler) async {
-
+        onRequest: (RequestOptions options) async {
           print(options.uri);
-          return handler.next(options);
+          return options;
         },
-        onResponse:
-            (Response response, ResponseInterceptorHandler handler) async {
-          return handler.next(response);
+        onResponse: (Response response) async {
+          return response;
         },
-        onError: (DioError err, ErrorInterceptorHandler handler) async {
+        onError: (DioError err) async {
           print(err.message);
-          return handler.next(err); //continue
+          return err; //continue
         },
       ),
     );

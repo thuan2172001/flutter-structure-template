@@ -20,7 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc:
-  dio:
+  dio: ^3.0.10
   secp256k1:
   tuple:
   cryptography:
@@ -35,6 +35,8 @@ dependencies:
   flutter_modular:
   shared_preferences:
   webview_flutter:
+  grpc: ^1.0.1
+  protobuf: ^1.0.0
 
 
 dev_dependencies:

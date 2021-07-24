@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Components/search_field.dart';
+import 'package:flutter_auth/Components/Input/search_field.dart';
 
-import 'account_button.dart';
+import '../CustomButton/account_button.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader();

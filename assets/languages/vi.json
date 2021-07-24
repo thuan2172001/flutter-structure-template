@@ -17,6 +17,8 @@
   "back": "Quay lại",
   "clear": "Xóa hết",
   "save": "Luu",
+  "SIGNUP": "Dang ky",
+  "LOGIN": "Dang nhap",
   "WRONG.USERNAME": "Sai tên đăng nhập",
   "AUTH.ERROR.MISMATCH_PUBLIC_KEY": "Hết hạn đăng nhập",
   "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD": "Cần đổi mật khẩu",

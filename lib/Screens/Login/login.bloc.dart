@@ -28,7 +28,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   ) async* {
     // TODO: implement mapEventToState
     if (event is LoginShowEvent) {
-      yield LoginSuccess(status: statusOK, username: "", password: "", showPassword: false);
+      yield LoginFail(status: statusOK, username: "", password: "", showPassword: false);
     }
     if (event is LoginSubmitEvent) {
       yield LoginLoading(message: "LOADING.LOGIN");
@@ -69,24 +69,24 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             user.privateKey = privateKey;
             user.encryptedPrivateKey = encryptedPrivateKey;
             UserStorageService.setUser(user);
-            yield LoginExit(message: "3 2 1 ...", route: "/homepage");
+            yield LoginSuccess(message: "3 2 1 ...", route: "/homepage");
           } else if (validateServer2.message ==
               "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD") {
             UserStorageService.removeUser();
-            yield LoginExit(
+            yield LoginSuccess(
                 message: "Đang vào màn hình đổi mật khẩu",
                 route: "/newPassword",
                 username: event.username,
                 publicKey: publicKey,
                 privateKey: privateKey);
           } else
-            yield LoginSuccess(
+            yield LoginFail(
                 username: event.username,
                 password: event.password,
                 showPassword: false,
                 status: validateServer2);
         } else {
-          yield LoginSuccess(
+          yield LoginFail(
               username: event.username,
               password: event.password,
               showPassword: false,
@@ -94,7 +94,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
               wrong: "password");
         }
       } else
-        yield LoginSuccess(
+        yield LoginFail(
             username: event.username,
             password: event.password,
             showPassword: false,
@@ -102,7 +102,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             wrong: "username");
     }
     if (event is LoginShowPassEvent) {
-      yield LoginSuccess(
+      yield LoginFail(
         username: event.username,
         password: event.password,
         showPassword: true,

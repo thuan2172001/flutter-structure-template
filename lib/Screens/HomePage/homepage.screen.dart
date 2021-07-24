@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Components/home_header.dart';
+import 'package:flutter_auth/Components/Header/home_header.dart';
 import 'package:flutter_auth/Screens/HomePage/components/body.dart';
 
 class HomePageScreen extends StatelessWidget {
