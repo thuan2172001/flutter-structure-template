@@ -4,6 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_auth/Api/user_api.dart';
 import 'package:flutter_auth/Models/status.dart';
+import 'package:flutter_auth/Validator/response_validator.dart';
+import 'package:flutter_auth/Validator/signup_validator.dart';
 import 'package:meta/meta.dart';
 
 part 'signup.event.dart';
@@ -18,22 +20,30 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
     SignupEvent event,
   ) async* {
     if (event is SignupShowEvent) {
-      yield SignupFail(status: statusOK, username: "", password: "", confirmPassword: "", showPassword: false);
+      yield SignupFail(
+          status: statusOK,
+          username: "",
+          password: "",
+          confirmPassword: "",
+          showPassword: false);
     }
     if (event is SignupSubmitEvent) {
       yield SignupLoading(message: "LOADING.SIGNUP");
       Response response = await UserAPI.signup(event.username, event.password);
-      print(response);
-      yield SignupFail(
-        username: event.username,
-        password: event.password,
-        confirmPassword: event.confirmPassword,
-        showPassword: false,
-      );
-      // yield SignupSuccess(
-      //   message: 'redirect to login page',
-      //   route: "/login",
-      // );
+      Status responseStatus = ResponseValidator.check(response);
+      if (responseStatus.status == "OK") {      
+        yield SignupSuccess(
+          message: 'redirect to login page',
+          route: "/login",
+        );
+      } else {
+        yield SignupFail(
+          username: event.username,
+          password: event.password,
+          confirmPassword: event.confirmPassword,
+          showPassword: false,
+        );
+      }
     }
     if (event is SignupShowPassEvent) {
       yield SignupFail(

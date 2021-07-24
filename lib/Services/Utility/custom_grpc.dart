@@ -1,5 +1,4 @@
 import 'package:grpc/grpc.dart';
-
 class GrpcClient {
   ClientChannel client;
 
