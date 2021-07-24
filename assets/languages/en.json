@@ -17,6 +17,8 @@
   "back": "Back",
   "clear": "Clear",
   "save": "Save",
+  "SIGNUP": "Sign up",
+  "LOGIN": "Sign in",
   "WRONG.USERNAME": "Username not found",
   "AUTH.ERROR.MISMATCH_PUBLIC_KEY": "Expired session",
   "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD": "You need to change password",

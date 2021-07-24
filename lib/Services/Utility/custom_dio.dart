@@ -36,18 +36,18 @@ class CustomDio {
     };
     _dio.interceptors.add(
       InterceptorsWrapper(
-        onRequest:
-            (RequestOptions options, RequestInterceptorHandler handler) async {
-          return handler.next(options); //continue
+        onRequest: (RequestOptions options) async {
+          print('onRequest');
+          print({"request": options});
+          return options; //continue
         },
-        onResponse:
-            (Response response, ResponseInterceptorHandler handler) async {
+        onResponse: (Response response) async {
           print({"response": response});
-          return handler.next(response);
+          return (response);
         },
-        onError: (DioError error, ErrorInterceptorHandler handler) async {
+        onError: (DioError error) async {
           print({"error": error});
-          return handler.next(error); //continue
+          return error; //continue
         },
       ),
     );

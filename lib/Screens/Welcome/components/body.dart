@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Login/login.screen.dart';
 import 'package:flutter_auth/Components/CustomButton/rounded_button.dart';
+import 'package:flutter_auth/Screens/Signup/signup.screen.dart';
 import 'package:flutter_auth/Screens/Welcome/components/background.dart';
+import 'package:flutter_auth/Services/Storage/language_storage_service.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
@@ -25,13 +27,26 @@ class Body extends StatelessWidget {
             ),
             SizedBox(height: size.height * 0.05),
             RoundedButton(
-              text: "LOGIN",
+              text: LanguageStorageService.text('LOGIN'),
               press: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
                       return LoginScreen();
+                    },
+                  ),
+                );
+              },
+            ),
+            RoundedButton(
+              text: LanguageStorageService.text('SIGNUP'),
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SignupScreen();
                     },
                   ),
                 );

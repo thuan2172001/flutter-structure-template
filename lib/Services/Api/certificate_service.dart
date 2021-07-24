@@ -8,6 +8,13 @@ import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:secp256k1/secp256k1.dart';
 import 'package:tuple/tuple.dart';
 
+import 'package:pointycastle/api.dart' as POINTY;
+import 'package:pointycastle/ecc/api.dart';
+import 'package:pointycastle/ecc/curves/secp256k1.dart';
+import 'package:pointycastle/key_generators/api.dart';
+import 'package:pointycastle/key_generators/ec_key_generator.dart';
+import 'package:pointycastle/random/fortuna_random.dart';
+
 class CertificateInfo {
   String username;
   String timestamp;
@@ -35,19 +42,6 @@ String hashMessage(String message) {
   var digest1 = sha256.convert(bytes1);
 
   return digest1.toString();
-}
-
-String signMess() {
-  String privateKey = "2r60NylfGC6kWJCJRu29VLxwRTVKouar7pnGNzJAEa0=";
-  String mes = "hello";
-  var bytes1 = utf8.encode(mes);
-  var digest1 = sha256.convert(bytes1);
-  String message = digest1.toString();
-  var privateKeyHex = convertBase64ToHex(privateKey);
-  var privateKeyDecode = PrivateKey.fromHex(privateKeyHex);
-  var a = privateKeyDecode.signature(message);
-  var base64Sign = convertHexToBase64(a.toRawHex());
-  return base64Sign;
 }
 
 String signMessage(privateKey, message) {
@@ -151,4 +145,33 @@ String convertHexToBase64(String key) {
   var keyBase64Encode = base64.encode(keyHexDecode);
 
   return keyBase64Encode;
+}
+
+Uint8List _seed() {
+  var random = Random.secure();
+  var seed = List<int>.generate(32, (_) => random.nextInt(255));
+  return Uint8List.fromList(seed);
+}
+
+POINTY.PrivateKey _secp256k1KeyPair() {
+  var keyParams = ECKeyGeneratorParameters(ECCurve_secp256k1());
+  var random = FortunaRandom();
+  random.seed(POINTY.KeyParameter(_seed()));
+  var generator = ECKeyGenerator();
+  generator.init(POINTY.ParametersWithRandom(keyParams, random));
+  return generator.generateKeyPair().privateKey;
+}
+
+Map<String, dynamic> generateKeyPairAndEncrypt(String password) {
+  ECPrivateKey privateKey = _secp256k1KeyPair();
+  final privateKeyDecode = PrivateKey(privateKey.d);
+  String publicKeyBase64 =
+      convertHexToBase64(privateKeyDecode.publicKey.toCompressedHex());
+  String privateKeyBase64 = convertHexToBase64(privateKeyDecode.toHex());
+  var encryptedPrivateKey = encryptAESCryptoJS(privateKeyBase64, password);
+  final Map<String, dynamic> encryptedKeyPair = {
+    "publicKey": publicKeyBase64,
+    "encryptedPrivateKey": encryptedPrivateKey
+  };
+  return encryptedKeyPair;
 }

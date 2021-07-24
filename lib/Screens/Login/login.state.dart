@@ -11,29 +11,31 @@ class LoginLoading extends LoginState {
   LoginLoading({this.message});
 }
 
-class LoginSuccess extends LoginState {
+class LoginFail extends LoginState {
   final String username, password;
   final bool showPassword;
   String wrong;
 
   final Status status;
 
-  LoginSuccess(
-      {this.username,
-      this.password,
-      this.showPassword,
-      this.status,
-      this.wrong});
+  LoginFail({
+    this.username,
+    this.password,
+    this.showPassword,
+    this.status,
+    this.wrong,
+  });
 }
 
-class LoginExit extends LoginState {
+class LoginSuccess extends LoginState {
   final String route, message;
   String username, publicKey, privateKey;
 
-  LoginExit(
-      {this.message,
-      this.route,
-      this.username,
-      this.publicKey,
-      this.privateKey});
+  LoginSuccess({
+    this.message,
+    this.route,
+    this.username,
+    this.publicKey,
+    this.privateKey,
+  });
 }
