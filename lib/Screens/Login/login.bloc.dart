@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_auth/Proto/test.dart';
 import 'package:flutter_auth/Repository/login_repository.dart';
 import 'package:flutter_auth/Repository/user_repository.dart';
 import 'package:flutter_auth/Data/login_data.dart';
@@ -28,9 +29,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   ) async* {
     // TODO: implement mapEventToState
     if (event is LoginShowEvent) {
-      yield LoginFail(status: statusOK, username: "", password: "", showPassword: false);
+      yield LoginFail(
+          status: statusOK, username: "", password: "", showPassword: false);
     }
     if (event is LoginSubmitEvent) {
+      var test = await TestGrpc.sayHello(['madagascar']);
+      print(test);
       yield LoginLoading(message: "LOADING.LOGIN");
       Response responseCredential = await UserAPI.getCredential(event.username);
       Status validateUsername = ResponseValidator.check(responseCredential);
