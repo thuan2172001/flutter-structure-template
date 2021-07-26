@@ -25,5 +25,6 @@
   "AUTH.ERROR.INVALID_REQUEST": "Chưa nhập đủ thông tin",
   "WRONG.PASSWORD": "Sai mật khẩu",
   "ERROR.SERVER": "Ca map can cap quang ...",
-  "LOGIN_SUCCESS_MSG": "Thanh cong roi dai vuong oi!"
+  "LOGIN_SUCCESS_MSG": "Thanh cong roi dai vuong oi!",
+  "edit": "sửa",
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/Config/color_config.dart';
+import 'package:flutter_auth/Function/middleware.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AccountButton extends StatelessWidget {
@@ -19,7 +20,7 @@ class AccountButton extends StatelessWidget {
                 color: ColorConfig.secondaryColor.withOpacity(0.1),
                 shape: BoxShape.circle),
             child: SvgPicture.asset("assets/icons/User Icon.svg")),
-        onTap: () {},
+        onTap: () => MiddleWare.push(context, '/account'),
       ),
     );
   }

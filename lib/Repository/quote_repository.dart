@@ -6,7 +6,7 @@ class QuoteRepository {
   final QuoteAPIClient quoteAPIClient = QuoteAPIClient();
 
   Future<List<dynamic>> getQuote() async {
-    final rp = await quoteAPIClient.get('', {"q": "tesla", "from": "2021-06-23", "sortBy": "publishedAt", "apiKey": QuoteAPIClient.accessKey});
+    final rp = await quoteAPIClient.get('', {"q": "tesla", "from": "2021-06-26", "sortBy": "publishedAt", "apiKey": QuoteAPIClient.accessKey});
     print(rp);
     final parsed = json.decode(rp.toString());
     print(parsed["articles"].toString());

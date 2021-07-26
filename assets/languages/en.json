@@ -25,5 +25,6 @@
   "AUTH.ERROR.INVALID_REQUEST": "Not enough information",
   "WRONG.PASSWORD": "Wrong password",
   "ERROR.SERVER": "Something went wrong ...",
-  "LOGIN_SUCCESS_MSG": "Success roi dai vuong oi!"
+  "LOGIN_SUCCESS_MSG": "Success roi dai vuong oi!",
+  "edit": "edit"
 }
