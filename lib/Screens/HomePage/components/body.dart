@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Components/LoadingComponent/loading_component.dart';
 import 'package:flutter_auth/Repository/quote_repository.dart';
 import 'package:flutter_auth/Function/handleURL.dart';
 import 'package:flutter_auth/Screens/HomePage/components/category_list.dart';
@@ -64,7 +65,7 @@ class Body extends StatelessWidget {
               if (snapshot.hasError) {
                 return Text('${snapshot.error}');
               }
-              return Text("vvv");
+              return LoadingComponent(context);
             },
           )
         ],

@@ -76,10 +76,9 @@ class LoginScreen extends StatelessWidget {
                         child: Text(
                           'Sign in',
                           style: TextStyle(
-                            fontFamily: FontConfig.mainFont,
-                            fontSize: 40,
-                            color: Theme.of(context).primaryColor
-                          ),
+                              fontFamily: FontConfig.mainFont,
+                              fontSize: 40,
+                              color: Theme.of(context).primaryColor),
                         ),
                       ),
                       Container(
@@ -156,7 +155,8 @@ class LoginScreen extends StatelessWidget {
                                             state.showPassword
                                                 ? Icons.lock_open
                                                 : Icons.lock_outline,
-                                            color: Theme.of(context).primaryColor,
+                                            color:
+                                                Theme.of(context).primaryColor,
                                             size: 28,
                                           ),
                                         ),
@@ -164,7 +164,8 @@ class LoginScreen extends StatelessWidget {
                                         hintStyle: TextStyle(
                                             fontFamily: FontConfig.mainFont,
                                             fontWeight: FontWeight.w300),
-                                        fillColor: Theme.of(context).primaryColor,
+                                        fillColor:
+                                            Theme.of(context).primaryColor,
                                         border: InputBorder.none),
                                     style: TextStyle(
                                       fontSize: 16,
@@ -197,17 +198,38 @@ class LoginScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Theme.of(context).primaryColor,
-                            border: Border.all(color: Theme.of(context).primaryColor),
+                            border: Border.all(
+                                color: Theme.of(context).primaryColor),
                           ),
                           child: Center(
                             child: Text(
                               "Sign in",
-                              style: TextStyle(
-                                  fontSize: 16, color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.white),
                             ),
                           ),
                         ),
                       ),
+                      InkWell(
+                        child: Text('Forgot Password ?'),
+                        onTap: () {
+                          Future.delayed(
+                            Duration.zero,
+                            () async => await MiddleWare.pushAndReplace(
+                              context,
+                              '/forgotPassword',
+                            ),
+                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) {
+                          //       return ForgotP();
+                          //     },
+                          //   ),
+                          // );
+                        },
+                      )
                     ],
                   ),
                 ),

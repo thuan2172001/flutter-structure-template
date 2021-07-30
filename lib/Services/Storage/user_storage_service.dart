@@ -22,7 +22,7 @@ class UserStorageService {
   }
 
   static String getUserBy(String type) {
-    if (type == "id") return Storage.user.id;
+    if (type == "_id") return Storage.user.id;
     if (type == "username") return Storage.user.username;
     if (type == "publicKey") return Storage.user.publicKey;
     if (type == "role") return Storage.user.role;
@@ -30,7 +30,7 @@ class UserStorageService {
     if (type == "privateKey") return Storage.user.privateKey;
     if (type == "fullName") return Storage.user.fullName;
     if (type == "certification") return Storage.user.certification;
-    if (type == "email") return Storage.user.email;
+    if (type == "email") return Storage.user.username; //username equals email now
     if (type == "encryptedPrivateKey") return Storage.user.encryptedPrivateKey;
     else
       return null;

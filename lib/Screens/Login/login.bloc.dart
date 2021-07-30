@@ -73,6 +73,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             user.privateKey = privateKey;
             user.encryptedPrivateKey = encryptedPrivateKey;
             UserStorageService.setUser(user);
+            print({'email': user.id});
             yield LoginSuccess(message: "3 2 1 ...", route: "/homepage");
           } else if (validateServer2.message ==
               "AUTH.ERROR.NEED_TO_CHANGE_PASSWORD") {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/Components/LoadingComponent/loading_component.dart';
 import 'package:flutter_auth/Components/SizedBox/MarginSizedBox.dart';
 import 'package:flutter_auth/Config/font_config.dart';
 import 'package:flutter_auth/Function/middleware.dart';
@@ -14,6 +15,14 @@ class SignupScreen extends StatelessWidget {
     return BlocProvider<SignupBloc>(
       create: (contextBloc) => SignupBloc()..add(SignupShowEvent()),
       child: Scaffold(
+        appBar: AppBar(
+          title: Text('Sign up'),
+          leading: BackButton(
+            onPressed: () {
+              MiddleWare.pop(context);
+            },
+          ),
+        ),
         backgroundColor: Colors.white,
         body: WillPopScope(
           onWillPop: () async {
@@ -24,10 +33,7 @@ class SignupScreen extends StatelessWidget {
             if (state is SignupFail) {
               return bodyBloc(context, state);
             } else if (state is SignupLoading) {
-              return Container(
-                alignment: Alignment.center,
-                child: Text('Loading'),
-              );
+              return LoadingComponent(context);
             } else {
               if (state is SignupSuccess) {
                 print(state.route);
@@ -51,7 +57,7 @@ class SignupScreen extends StatelessWidget {
     String confirmPassword = state.confirmPassword;
     return SingleChildScrollView(
         child: Container(
-      height: MediaQuery.of(context).size.height,
+      height: MediaQuery.of(context).size.height - 200,
       child: Stack(
         children: <Widget>[
           Align(
